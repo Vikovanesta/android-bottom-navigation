@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/txt_username"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="64dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/welcome_to_home_page"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btn_buy_ticket"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/explore_destination"
+        android:textSize="14sp"
+        />
+
+</LinearLayout>

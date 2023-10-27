@@ -37,11 +37,16 @@ class TicketFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
-            val action = TicketFragmentDirections.actionTicketFragmentToOrderFragment()
+            val action = TicketFragmentDirections.actionTicketFragmentToOrderFragment(txtOrderTicket.text.toString())
             btnBuyTicket.setOnClickListener {
                 findNavController().navigate(action)
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {
