@@ -37,10 +37,19 @@ class TicketFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
-            val action = TicketFragmentDirections.actionTicketFragmentToOrderFragment(txtOrderTicket.text.toString())
+            var action = TicketFragmentDirections.actionTicketFragmentToOrderFragment(txtOrderedTicketType.text.toString())
             btnBuyTicket.setOnClickListener {
                 findNavController().navigate(action)
             }
+
+            findNavController().currentBackStackEntry?.savedStateHandle?.
+                getLiveData<String>("ticketType")?.
+                observe(viewLifecycleOwner) {
+                    txtOrderedTicketType.text = it
+                    txtOrderedTicket.visibility = View.VISIBLE
+                    txtOrderedTicketType.visibility = View.VISIBLE
+                    action = TicketFragmentDirections.actionTicketFragmentToOrderFragment(it)
+                }
         }
     }
 

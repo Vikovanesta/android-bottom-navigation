@@ -1,8 +1,10 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.Week9BottomNavigation" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Week9BottomNavigation" parent="Theme.Material3.DayNight">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="actionBarSize">50dip</item>
+        <item name="colorOnPrimary">@color/white</item>
     </style>
 
     <style name="Theme.Week9BottomNavigation" parent="Base.Theme.Week9BottomNavigation" />

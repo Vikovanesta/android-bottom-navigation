@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".HomeFragment">
@@ -24,6 +25,8 @@
         android:fontFamily="@font/poppins_bold"
         android:text="@string/explore_destination"
         android:textSize="14sp"
+        android:background="@drawable/custom_btn"
+        app:backgroundTint="@color/primary"
         />
 
 </LinearLayout>

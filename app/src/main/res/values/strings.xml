@@ -3,4 +3,18 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="order_ticket">Order Ticket</string>
+    <string name="avatar">avatar</string>
+    <string name="viko_rivanesta">Viko Rivanesta</string>
+    <string name="nim">22/499510/SV/21336</string>
+    <string name="welcome_to_home_page">Welcome to Home Page</string>
+    <string name="explore_destination">Explore Destination</string>
+    <string name="ticket">ticket</string>
+    <string name="buy_ticket">Buy Ticket</string>
+    <string name="ordered_ticket">Ordered Ticket:</string>
+    <string name="first_class_ticket">First Class Ticket</string>
+    <array name="ticket_classes">
+        <item>First Class Ticket</item>
+        <item>Business Class Ticket</item>
+        <item>Economy Class Ticket</item>
+    </array>
 </resources>

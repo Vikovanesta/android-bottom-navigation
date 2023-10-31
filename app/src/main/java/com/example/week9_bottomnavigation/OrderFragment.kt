@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.week9_bottomnavigation.databinding.FragmentOrderBinding
@@ -40,14 +42,23 @@ class OrderFragment : Fragment() {
         with(binding) {
             val args : OrderFragmentArgs by navArgs()
 
-            findNavController().currentBackStackEntry?.savedStateHandle?.
-                getLiveData<String>("ticket")?.
-                observe(viewLifecycleOwner) {
-                    txtOrderTicket.text = it
-                }
+            val adapterTicketClasses = ArrayAdapter<String> (
+                requireContext(),
+                android.R.layout.simple_spinner_item,
+                resources.getStringArray(R.array.ticket_classes)
+            )
+            spinTicketClass.adapter = adapterTicketClasses
+
+            // Set selected spinner item to the one passed from TicketFragment
+            spinTicketClass.setSelection(adapterTicketClasses.getPosition(args.ticketType))
+            Toast.makeText(requireContext(), args.ticketType, Toast.LENGTH_SHORT).show()
 
             btnBuyTicket.setOnClickListener {
-                findNavController().navigateUp()
+                findNavController().apply {
+                    previousBackStackEntry?.
+                        savedStateHandle?.
+                        set("ticketType", spinTicketClass.selectedItem.toString())
+                }.navigateUp()
             }
         }
     }
